@@ -30,6 +30,7 @@ namespace ExecuResume.Controllers
         public string SubUserId => "prominds";
 
         // GET: api/Resume
+        [Route("api/resume")]
         [HttpPost]
         public async Task<IHttpActionResult> GetData([FromBody] RequestDTO request)
         {
@@ -40,6 +41,26 @@ namespace ExecuResume.Controllers
                 ResumeParserData responseParserData = new ResumeParserData();
                 responseParserData.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(x.@return)));
                 return Ok(responseParserData);
+            }
+        }
+
+        // GET: api/Resume
+        [Route("api/resume/multiple")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetAllData([FromBody] MultipleResumeData request)
+        {
+            using (RChilliParserPortTypeClient rcpClient = new RChilliParserPortTypeClient())
+            {
+                List<ResumeParserData> parseredResumes = new List<ResumeParserData>();
+                foreach (var req in request.ResumeList)
+                {
+                    parseResumeBinaryResponse x = await rcpClient.parseResumeBinaryAsync(req.FileData, req.FileName, UserKey, Version, SubUserId);
+
+                    ResumeParserData responseParserData = new ResumeParserData();
+                    responseParserData.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(x.@return)));
+                    parseredResumes.Add(responseParserData);
+                }
+                return Ok(parseredResumes);
             }
         }
     }

@@ -146,6 +146,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\MultipleResumeData.cs" />
     <Compile Include="Repositories\Projects.cs" />
     <Compile Include="Repositories\ResumeParserData.cs" />
     <Compile Include="Repositories\SegregateExperience.cs" />
