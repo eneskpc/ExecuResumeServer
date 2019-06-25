@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://RchilliResumeParser" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://RchilliResumeParser" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+		Please Type your service description here
+	</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://RchilliResumeParser">
+      <xs:element name="parseResumeBinary">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filedata" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userkey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subUserId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeBinaryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResume">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userkey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subUserId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeBinaryWithCountry">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filedata" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userkey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="CountryKey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subUserId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeBinaryWithCountryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeBinaryWithCategory">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="filedata" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fileName" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userkey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subUserId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="CategoryXml" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="parseResumeBinaryWithCategoryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buildRelease">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="buildReleaseResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ParseResumeWithCountry">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="url" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="userkey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="CountryKey" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="subUserId" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ParseResumeWithCountryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="parseResumeBinaryWithCategoryRequest">
+    <wsdl:part name="parameters" element="ns:parseResumeBinaryWithCategory" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeBinaryWithCategoryResponse">
+    <wsdl:part name="parameters" element="ns:parseResumeBinaryWithCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ParseResumeWithCountryRequest">
+    <wsdl:part name="parameters" element="ns:ParseResumeWithCountry" />
+  </wsdl:message>
+  <wsdl:message name="ParseResumeWithCountryResponse">
+    <wsdl:part name="parameters" element="ns:ParseResumeWithCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeBinaryRequest">
+    <wsdl:part name="parameters" element="ns:parseResumeBinary" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeBinaryResponse">
+    <wsdl:part name="parameters" element="ns:parseResumeBinaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeRequest">
+    <wsdl:part name="parameters" element="ns:parseResume" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeResponse">
+    <wsdl:part name="parameters" element="ns:parseResumeResponse" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeBinaryWithCountryRequest">
+    <wsdl:part name="parameters" element="ns:parseResumeBinaryWithCountry" />
+  </wsdl:message>
+  <wsdl:message name="parseResumeBinaryWithCountryResponse">
+    <wsdl:part name="parameters" element="ns:parseResumeBinaryWithCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="buildReleaseRequest">
+    <wsdl:part name="parameters" element="ns:buildRelease" />
+  </wsdl:message>
+  <wsdl:message name="buildReleaseResponse">
+    <wsdl:part name="parameters" element="ns:buildReleaseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="RChilliParserPortType">
+    <wsdl:operation name="parseResumeBinaryWithCategory">
+      <wsdl:input wsaw:Action="urn:parseResumeBinaryWithCategory" message="ns:parseResumeBinaryWithCategoryRequest" />
+      <wsdl:output wsaw:Action="urn:parseResumeBinaryWithCategoryResponse" message="ns:parseResumeBinaryWithCategoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ParseResumeWithCountry">
+      <wsdl:input wsaw:Action="urn:ParseResumeWithCountry" message="ns:ParseResumeWithCountryRequest" />
+      <wsdl:output wsaw:Action="urn:ParseResumeWithCountryResponse" message="ns:ParseResumeWithCountryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinary">
+      <wsdl:input wsaw:Action="urn:parseResumeBinary" message="ns:parseResumeBinaryRequest" />
+      <wsdl:output wsaw:Action="urn:parseResumeBinaryResponse" message="ns:parseResumeBinaryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="parseResume">
+      <wsdl:input wsaw:Action="urn:parseResume" message="ns:parseResumeRequest" />
+      <wsdl:output wsaw:Action="urn:parseResumeResponse" message="ns:parseResumeResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinaryWithCountry">
+      <wsdl:input wsaw:Action="urn:parseResumeBinaryWithCountry" message="ns:parseResumeBinaryWithCountryRequest" />
+      <wsdl:output wsaw:Action="urn:parseResumeBinaryWithCountryResponse" message="ns:parseResumeBinaryWithCountryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="buildRelease">
+      <wsdl:input wsaw:Action="urn:buildRelease" message="ns:buildReleaseRequest" />
+      <wsdl:output wsaw:Action="urn:buildReleaseResponse" message="ns:buildReleaseResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="RChilliParserSoap11Binding" type="ns:RChilliParserPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="parseResumeBinaryWithCategory">
+      <soap:operation soapAction="urn:parseResumeBinaryWithCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseResumeWithCountry">
+      <soap:operation soapAction="urn:ParseResumeWithCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinary">
+      <soap:operation soapAction="urn:parseResumeBinary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResume">
+      <soap:operation soapAction="urn:parseResume" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinaryWithCountry">
+      <soap:operation soapAction="urn:parseResumeBinaryWithCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildRelease">
+      <soap:operation soapAction="urn:buildRelease" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RChilliParserSoap12Binding" type="ns:RChilliParserPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="parseResumeBinaryWithCategory">
+      <soap12:operation soapAction="urn:parseResumeBinaryWithCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseResumeWithCountry">
+      <soap12:operation soapAction="urn:ParseResumeWithCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinary">
+      <soap12:operation soapAction="urn:parseResumeBinary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResume">
+      <soap12:operation soapAction="urn:parseResume" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinaryWithCountry">
+      <soap12:operation soapAction="urn:parseResumeBinaryWithCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildRelease">
+      <soap12:operation soapAction="urn:buildRelease" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="RChilliParserHttpBinding" type="ns:RChilliParserPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="parseResumeBinaryWithCategory">
+      <http:operation location="parseResumeBinaryWithCategory" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ParseResumeWithCountry">
+      <http:operation location="ParseResumeWithCountry" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinary">
+      <http:operation location="parseResumeBinary" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResume">
+      <http:operation location="parseResume" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="parseResumeBinaryWithCountry">
+      <http:operation location="parseResumeBinaryWithCountry" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildRelease">
+      <http:operation location="buildRelease" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="RChilliParser">
+    <wsdl:port name="RChilliParserHttpSoap11Endpoint" binding="ns:RChilliParserSoap11Binding">
+      <soap:address location="http://78.111.96.98:8080/RChilliParser/services/RChilliParser.RChilliParserHttpSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RChilliParserHttpSoap12Endpoint" binding="ns:RChilliParserSoap12Binding">
+      <soap12:address location="http://78.111.96.98:8080/RChilliParser/services/RChilliParser.RChilliParserHttpSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="RChilliParserHttpEndpoint" binding="ns:RChilliParserHttpBinding">
+      <http:address location="http://78.111.96.98:8080/RChilliParser/services/RChilliParser.RChilliParserHttpEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

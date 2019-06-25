@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExecuCVParserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TBL_LOGS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PARSED_FILE_NAME" Type="nvarchar" MaxLength="100" />
+    <Property Name="PROCESS_DATETIME" Type="datetime" />
+    <Property Name="REQUEST_IP" Type="nvarchar" MaxLength="100" />
+    <Property Name="ORIGIN_ADDRESS" Type="nvarchar" MaxLength="100" />
+    <Property Name="CRE_USER" Type="nvarchar" MaxLength="100" />
+    <Property Name="CRE_DATE" Type="datetime" />
+    <Property Name="UPD_USER" Type="nvarchar" MaxLength="100" />
+    <Property Name="UPD_DATE" Type="datetime" />
+    <Property Name="DEL_USER" Type="nvarchar" MaxLength="100" />
+    <Property Name="DEL_DATE" Type="datetime" />
+    <Property Name="DELETED" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="ExecuCVParserModelStoreContainer">
+    <EntitySet Name="TBL_LOGS" EntityType="Self.TBL_LOGS" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

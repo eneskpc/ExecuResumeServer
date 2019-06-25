@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExecuCVParserModelStoreContainer" CdmEntityContainer="ExecuCVParserEntities">
+    <EntitySetMapping Name="TBL_LOGS">
+      <EntityTypeMapping TypeName="ExecuCVParserModel.TBL_LOGS">
+        <MappingFragment StoreEntitySet="TBL_LOGS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PARSED_FILE_NAME" ColumnName="PARSED_FILE_NAME" />
+          <ScalarProperty Name="PROCESS_DATETIME" ColumnName="PROCESS_DATETIME" />
+          <ScalarProperty Name="REQUEST_IP" ColumnName="REQUEST_IP" />
+          <ScalarProperty Name="ORIGIN_ADDRESS" ColumnName="ORIGIN_ADDRESS" />
+          <ScalarProperty Name="CRE_USER" ColumnName="CRE_USER" />
+          <ScalarProperty Name="CRE_DATE" ColumnName="CRE_DATE" />
+          <ScalarProperty Name="UPD_USER" ColumnName="UPD_USER" />
+          <ScalarProperty Name="UPD_DATE" ColumnName="UPD_DATE" />
+          <ScalarProperty Name="DEL_USER" ColumnName="DEL_USER" />
+          <ScalarProperty Name="DEL_DATE" ColumnName="DEL_DATE" />
+          <ScalarProperty Name="DELETED" ColumnName="DELETED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

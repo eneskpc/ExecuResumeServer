@@ -1,0 +1,382 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{FirstName}} {{Middlename}} {{LastName}} Adlı Kişinin Özgeçmişi</title>
+    <style>
+        /* http://meyerweb.com/eric/tools/css/reset/
+           v2.0 | 20110126
+           License: none (public domain)
+        */
+
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+            blockquote:before,
+            blockquote:after,
+            q:before,
+            q:after {
+                content: '';
+                content: none;
+            }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+    </style>
+    <style>
+        body {
+            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            overflow-y: scroll;
+            background-color: #fff;
+        }
+
+        .container {
+            padding-top: 40px;
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        .text-center {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .name-surname {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 20px;
+        }
+
+        img.mail {
+            width: 32px;
+        }
+
+        .pre-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .user-info > .info-text {
+                display: inline-block;
+                padding-left: 10px;
+                font-size: 21px;
+            }
+
+        .personal-info > .header {
+            padding-left: 2px;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: bold;
+            color: #777;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
+
+            table th {
+                text-align: left;
+                font-weight: bold;
+            }
+
+            table td {
+                padding: 5px 0;
+                font-size: 13px;
+            }
+
+                table td:nth-child(2n-1) {
+                    width: 180px;
+                }
+
+                table td:nth-child(2n) {
+                    width: 270px;
+                }
+
+        .fw-bold {
+            font-weight: bold;
+        }
+
+        .main-title {
+            font-size: 23px;
+            margin: 30px 0;
+        }
+
+        .work-experiences,
+        .work-experience {
+            position: relative;
+        }
+
+            .work-experiences .timeline {
+                position: absolute;
+                top: 120px;
+                left: -45px;
+                border-left: 2px dashed #999;
+                height: calc(100% - 160px);
+                width: 0px;
+            }
+
+            .work-experience > .experience-number {
+                position: absolute;
+                left: -60px;
+                top: 20px;
+                width: 25px;
+                height: 25px;
+                background-color: #fff;
+                font-weight: bold;
+                font-size: 18px;
+                border: 2px solid #333;
+                color: #333;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+        .skill {
+            flex-grow: 1;
+            font-family: Arial,sans-serif;
+            border-radius: 4px;
+            background-color: #C6C6C6;
+            color: #5C5A5A;
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px;
+            font-size: 80%;
+            text-transform: uppercase;
+        }
+
+            .skill > .month {
+                color: #fff;
+                background-color: #C30000;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                display: inline-block;
+                padding: 5px 10px;
+                margin: -5px -10px;
+                margin-left: 15px;
+                text-align: center;
+            }
+
+                .skill > .month > strong {
+                    display: block;
+                    background-color: #2777A5;
+                    margin: -5px -10px;
+                    margin-top: 0px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-bottom-right-radius: 4px;
+                    font-size: 14px;
+                }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <img src="http://dev.execuselect.com/Resources/images/companyLogos/CVLogoExecuSelect.png" />
+        </div>
+        <div class="pre-info">
+            <div>
+                <div class="name-surname">
+                    {{FirstName}} {{Middlename}} {{LastName}}
+                </div>
+                <div class="user-info">
+                    <img src="http://dev.execuselect.com/Resources/images/mail.png" class="mail" />
+                    <span class="info-text">{{Email}}</span>
+                </div>
+                <div class="user-info">
+                    <img src="http://dev.execuselect.com/Resources/images/whatsapp.png" class="mail" />
+                    <span class="info-text">{{Phone}}</span>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                {{UserCVPhoto}}
+            </div>
+        </div>
+        <hr />
+        <div class="personal-info">
+            <div class="header">Kişisel Bilgiler</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">TC Kimlik No :</td>
+                        <td>{{PassportNo}}</td>
+                        <td class="fw-bold">Cinsiyet :</td>
+                        <td>{{Gender}}</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Doğum Tarihi :</td>
+                        <td>{{DateOfBirth}}</td>
+                        <td class="fw-bold">Medeni Durumu :</td>
+                        <td>{{MaritalStatus}}</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Uyruğu :</td>
+                        <td>{{Nationality}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="personal-info">
+            <div class="header">Adres Bilgileri</div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Adres :</td>
+                        <td>{{Address}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">İl / Ülke :</td>
+                        <td>{{City}} / {{State}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        {{WorkExperiences}}
+        {{EducationInformation}}
+        {{Certificates}}
+        {{Skills}}
+    </div>
+</body>
+
+</html>
