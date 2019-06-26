@@ -368,6 +368,7 @@ namespace ExecuResume.Repositories
                                     }
 
                                     break;
+                                case "SegSkills":
                                 case "skillskeywords":
                                     if (reader.NodeType == XmlNodeType.Element)
                                     {

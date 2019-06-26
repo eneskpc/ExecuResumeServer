@@ -67,6 +67,7 @@ namespace ExecuResume.Controllers
 
                     File.WriteAllBytes(HttpContext.Current.Server.MapPath(@"\TemporaryFiles\" + tempFileName), Convert.FromBase64String(tempData));
                     responseParserData.TempURL = tempFileName;
+                    responseParserData.OutputXml = x.@return;
 
                     using (ExecuCVParserEntities db = new ExecuCVParserEntities())
                     {
@@ -182,7 +183,7 @@ namespace ExecuResume.Controllers
                 {
                     ResumeParserData tempRPD = new ResumeParserData();
                     tempRPD.ReadXml(new MemoryStream(Encoding.UTF8.GetBytes(xnRep[i].OuterXml)));
-
+                    tempRPD.OutputXml = xnRep[i].OuterXml;
                     string tempFileName = Path.GetRandomFileName().Replace(".", "") + "-" + request.FileName;
 
                     File.WriteAllBytes(HttpContext.Current.Server.MapPath(@"\TemporaryFiles\" + tempFileName), Convert.FromBase64String(tempData));

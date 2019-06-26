@@ -19,18 +19,25 @@ namespace ExecuResume
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            Timer timer = new Timer(1000 * 3600 * 3);
+            Timer timer = new Timer(1000 * 60 * 3);
             timer.Enabled = true;
             timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
         }
 
         static void timer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            DirectoryInfo di = new DirectoryInfo(HttpContext.Current.Server.MapPath(@"\TemporaryFiles"));
-
-            foreach (FileInfo file in di.GetFiles())
+            try
             {
-                file.Delete();
+                DirectoryInfo di = new DirectoryInfo(HttpContext.Current.Server.MapPath(@"\TemporaryFiles"));
+
+                foreach (FileInfo file in di.GetFiles())
+                {
+                    file.Delete();
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }
